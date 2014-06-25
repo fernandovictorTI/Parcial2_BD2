@@ -17,6 +17,8 @@ BEGIN
 		END
     ELSE IF (@OP = 'D')
 		BEGIN
+			UPDATE Medicos SET nroa = NULL WHERE nroa = @NROA
+			PRINT 'Atualizado ambulatorio do medico para null que atendia no ambulatorio a ser deletado'
 			DELETE FROM Ambulatorios WHERE nroa = @NROA
 			PRINT 'Ambulatorio deletado com sucesso'
 		END
